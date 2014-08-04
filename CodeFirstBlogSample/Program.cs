@@ -30,16 +30,17 @@ namespace CodeFirstBlogSample
                 
                 foreach (var b in blogs)
                 {
-                    //var postsText = "";
-                    //if (b.Posts != null && b.Posts.Count > 0)
-                    //{
-                    //    var postsTitles = b.Posts.Select(p => p.Title);
-                    //    postsText = postsTitles.Aggregate((a, t) => t + " " + a);
-                    //}
-                    foreach (var p in b.Posts)
-                    {                        
-                        Console.WriteLine(b.Name + " " + p.Title);
+                    var postsText = "";
+                    if (b.Posts.Count > 0)
+                    {
+                        var postsTitles = b.Posts.Select(p => p.Title);
+                        postsText = postsTitles.Aggregate((a, t) => t + " " + a);
+                        Console.WriteLine(b.Name + " " + postsText);
                     }
+                    //foreach (var p in b.Posts)
+                    //{                        
+                    //    Console.WriteLine(b.Name + " " + p.Title);
+                    //}
                 }
             }
         }
