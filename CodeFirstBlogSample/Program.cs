@@ -13,15 +13,16 @@ namespace CodeFirstBlogSample
         {
             using (var db = new BlogContext())
             {
-                //Console.Write("Enter a name for a new blog:");
-                //var name = Console.ReadLine();
+                Console.Write("Enter a name for a new blog:");
+                var name = Console.ReadLine();
 
-//                var post = new Post { Title = "Our standard title..." };
-//                var post2 = new Post { Title = "Our fancy title ;-)" };
-//                var blog = new Blog { Name = name + " 1", Posts = new List<Post> {post, post2} };
-////                var blog2 = new Blog { Name = name + " 2", Posts = new List<Post> { post } };
-//                db.Blogs.AddRange(new List<Blog> { blog });
-//                db.SaveChanges();
+                var post = new Post { Title = "Our standard title...", Content = "What can I say?" };
+                var post2 = new Post { Title = "Our fancy title ;-)" , Content = "This is what they do in France..." };
+                var blog = new Blog { Name = name + " 1", Posts = new List<Post> { post, post2 } };
+                // Did a test with two different Blogs sharing a post: one of the blogs didn't get his copy of the post; apparently there is no sharing going on!
+                //                var blog2 = new Blog { Name = name + " 2", Posts = new List<Post> { post } };
+                db.Blogs.AddRange(new List<Blog> { blog });
+                db.SaveChanges();
 
                 //var query = from b in db.Blogs
                 //            orderby b.Name
