@@ -13,19 +13,6 @@ namespace CodeFirstBlogSample
         {
             using (var db = new BlogContext())
             {
-                //Console.Write("Enter a name for a new blog:");
-                //var name = Console.ReadLine();
-
-//                var post = new Post { Title = "Our standard title..." };
-//                var post2 = new Post { Title = "Our fancy title ;-)" };
-//                var blog = new Blog { Name = name + " 1", Posts = new List<Post> {post, post2} };
-////                var blog2 = new Blog { Name = name + " 2", Posts = new List<Post> { post } };
-//                db.Blogs.AddRange(new List<Blog> { blog });
-//                db.SaveChanges();
-
-                //var query = from b in db.Blogs
-                //            orderby b.Name
-                //            select b;
                 var blogs = db.Blogs;//.Include(b => b.Posts);
                 
                 foreach (var b in blogs)
@@ -37,6 +24,8 @@ namespace CodeFirstBlogSample
                         postsText = postsTitles.Aggregate((a, t) => t + " " + a);
                         Console.WriteLine(b.Name + " " + postsText);
                     }
+
+                    // Display blog names and post titles
                     //foreach (var p in b.Posts)
                     //{                        
                     //    Console.WriteLine(b.Name + " " + p.Title);
