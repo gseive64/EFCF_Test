@@ -13,7 +13,7 @@ namespace CodeFirstBlogSample
         {
             using (var db = new BlogContext())
             {
-                Console.Write("Enter a name for a new blog:");
+                Console.Write("Enter a name for a new blog: ");
                 var name = Console.ReadLine();
 
                 var post = new Post { Title = "Our standard title...", Content = "What can I say?" };
@@ -59,7 +59,6 @@ namespace CodeFirstBlogSample
     {
         public BlogContext()
         {
-            this.Configuration.LazyLoadingEnabled = true;
         }
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Post> Posts { get; set; }
